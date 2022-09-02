@@ -19,7 +19,7 @@ class UpdateProductController extends BaseController
             if (count($data) < 1)
                 return $this->sendError('Body is empty', []);
 
-            $product =  $this->productService->getProductById($id);
+            $product =  $this->productService->getById($id);
             if (!$product)
                 return $this->sendError('Product not found', [], 404);
 

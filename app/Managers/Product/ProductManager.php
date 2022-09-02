@@ -12,44 +12,44 @@ class ProductManager
     {
     }
 
-    public function createUser(array $data)
+    public function create(array $data)
     {
         /* 
            Here you can add a layer of caching...
         */
 
-        return $this->productRepository->createUser($data);
+        return $this->productRepository->create($data);
     }
 
-    public function getAllProducts()
+    public function get()
     {
         /* 
            Here you can add a layer of caching...
         */
-        return $this->productRepository->getAllProducts();
+        return $this->productRepository->get();
     }
 
-    public function getProductById(int $id)
+    public function getById(int $id)
     {
         /* 
            Here you can add a layer of caching...
         */
-        return $this->productRepository->getProductById($id);
+        return $this->productRepository->getById($id);
     }
 
-    public function updateProductById(array $data, int $id)
+    public function update(array $data, int $id)
     {
         /* 
            Here you can add a layer of caching...
         */
-        return $this->productRepository->updateProductById($data, $id);
+        return $this->productRepository->update($data, $id);
     }
 
-    public function deleteProductById(int $id)
+    public function delete(int $id)
     {
         /* 
            Here you can add a layer of caching...
         */
-        return $this->productRepository->deleteProductById($id);
+        return $this->productRepository->delete($id);
     }
 }

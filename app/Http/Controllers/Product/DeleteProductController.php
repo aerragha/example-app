@@ -14,8 +14,7 @@ class DeleteProductController extends BaseController
     public function __invoke(int $id)
     {
         try {
-
-            $product =  $this->productService->getProductById($id);
+            $product =  $this->productService->getById($id);
             if (!$product)
                 return $this->sendError('Product not found', [], 404);
 

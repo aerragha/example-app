@@ -23,7 +23,7 @@ class ProductService
         /* 
             Here you can performs validation and business logic
         */
-        return $this->productManager->createUser($data);
+        return $this->productManager->create($data);
     }
 
 
@@ -32,12 +32,12 @@ class ProductService
      *
      * @return \Illuminate\Http\Response
      */
-    public function getAll(): Collection
+    public function get(): Collection
     {
         /* 
             Here you can performs validation and business logic
         */
-        return $this->productManager->getAllProducts();
+        return $this->productManager->get();
     }
 
     /**
@@ -46,12 +46,12 @@ class ProductService
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function getProductById(int $id): ?Product
+    public function getById(int $id): ?Product
     {
         /* 
             Here you can performs validation and business logic
         */
-        return $this->productManager->getProductById($id);
+        return $this->productManager->getById($id);
     }
 
     /**
@@ -66,7 +66,7 @@ class ProductService
         /* 
             Here you can performs validation and business logic
         */
-        return $this->productManager->updateProductById($data, $id);
+        return $this->productManager->update($data, $id);
     }
 
     /**
@@ -80,6 +80,6 @@ class ProductService
         /* 
             Here you can performs validation and business logic
         */
-        return $this->productManager->deleteProductById($id);
+        return $this->productManager->delete($id);
     }
 }

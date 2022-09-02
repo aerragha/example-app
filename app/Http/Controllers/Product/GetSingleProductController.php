@@ -15,11 +15,11 @@ class GetSingleProductController extends BaseController
     public function __invoke(int $id)
     {
         try {
-            $product =  $this->productService->getProductById($id);
+            $product =  $this->productService->getById($id);
             if (!$product)
                 return $this->sendError('Product not found', [], 404);
 
-            return  $this->productService->getProductById($id);
+            return $product;
         } catch (\Throwable $th) {
             // You can add logger here
             return $this->sendError('Something went wrong', 500);

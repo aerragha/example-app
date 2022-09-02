@@ -7,28 +7,28 @@ use Illuminate\Database\Eloquent\Collection;
 
 class ProductRepository
 {
-    public function createUser(array $data): Product
+    public function create(array $data): Product
     {
         return Product::query()->create($data);
     }
 
-    public function getAllProducts(): Collection
+    public function get(): Collection
     {
         return Product::query()->get();
     }
 
-    public function getProductById(int $id): ?Product
+    public function getById(int $id): ?Product
     {
         return Product::query()->find($id);
     }
 
-    public function updateProductById(array $data, int $id)
+    public function update(array $data, int $id): bool
     {
         $product = Product::query()->where('id', $id)->update($data);
         return $product;
     }
 
-    public function deleteProductById(int $id)
+    public function delete(int $id): bool
     {
         return Product::query()->delete($id);
     }

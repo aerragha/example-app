@@ -15,7 +15,7 @@ class GetProductsController extends BaseController
     public function __invoke()
     {
         try {
-            return $this->productService->getAll();
+            return $this->productService->get();
         } catch (\Throwable $th) {
             // You can add logger here
             return $this->sendError('Something went wrong', 500);
